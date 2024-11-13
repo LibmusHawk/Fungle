@@ -1,0 +1,411 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header and Navigation */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #4B0082;
+    color: white;
+    position: relative; /* Required for positioning the mobile toggle */
+}
+
+.main-header .logo img {
+    width: 100px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Navigation Links */
+nav a {
+    color: white;
+    text-decoration: none;
+    background-color: #6A0DAD;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #8A2BE2;
+}
+
+/* Mobile Navigation Toggle */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .main-header h1 {
+        margin: 10px 0;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        display: none; /* Hide navigation links initially */
+        padding: 10px 0;
+        gap: 10px;
+    }
+
+    nav a {
+        padding: 10px 20px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-toggle {
+        display: block; /* Show the navigation toggle button on mobile */
+    }
+
+    .nav-active {
+        display: flex; /* Show the navigation links when toggled */
+    }
+}
+
+/* Container */
+.container {
+    padding: 20px;
+}
+
+/* Search Bar Styles */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-form {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+.search-form input[type="text"] {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #4B0082;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-form input[type="text"]:focus {
+    border-color: #8A2BE2;
+}
+
+.search-form button {
+    background-color: #4B0082;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #6A0DAD;
+}
+
+/* Music Gallery */
+.music-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding-bottom: 200px;
+}
+
+.music-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.music-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.play-btn {
+    background-color: #4B0082;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.play-btn:hover {
+    background-color: #6A0DAD;
+}
+
+/* Music Player Styles */
+.music-player {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #4B0082;
+    padding: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 0 0;
+    z-index: 999;
+}
+
+/* Song Info: Cover + Title */
+.song-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.song-info img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.song-title {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+
+/* Player Controls: Centered */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.controls img {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    cursor: pointer;
+    margin: 0 10px;
+    transition: transform 0.2s;
+}
+
+.controls img:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+/* Progress Bar */
+.progress-container {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin: 0 10px;
+}
+
+#progress-bar {
+    flex-grow: 1;
+    height: 8px;
+    background: #8A2BE2;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+#progress-bar::-webkit-slider-thumb {
+    background-color: #fff;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+
+/* Time Labels */
+#current-time, #duration {
+    font-size: 12px;
+    color: white;
+}
+
+/* Volume Control */
+.volume-control {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+#volume-slider {
+    width: 100px;
+    background-color: #8A2BE2;
+    border-radius: 5px;
+    height: 6px;
+    appearance: none;
+    cursor: pointer;
+}
+
+#volume-slider::-webkit-slider-thumb {
+    background-color: white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .music-player {
+        flex-direction: column;
+    }
+
+    .progress-container {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .controls {
+        margin-top: 10px;
+    }
+}
+
+/* General Styles */
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a2e; /* Darker background */
+    color: #ffffff;
+}
+
+.main-header.dark-mode {
+    background-color: #8A2BE2; /* Darker purple */
+}
+
+.music-item.dark-mode {
+    background-color: #222222; /* Darker background for music items */
+    border: 1px solid #444444; /* Darker border */
+}
+
+.music-player.dark-mode {
+    background-color: #8A2BE2; /* Darker purple */
+}
+
+button {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Input Styles */
+input[type="text"].dark-mode {
+    border: 2px solid #444444;
+    background-color: #333333;
+    color: white;
+    text-align: center;
+}
+
+/* Additional Elements */
+.progress-container {
+    transition: background-color 0.3s;
+}
+
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 120px;
+    padding: 8px 16px;
+    border: 2px solid #4B0082; /* Purple border */
+    background-color: #ffffff; /* Light mode background */
+    color: #4B0082; /* Purple text */
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.dark-mode-toggle .toggle-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #4B0082; /* Purple circle */
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translate(0, -50%);
+    transition: left 0.3s, background-color 0.3s;
+}
+
+.dark-mode-toggle .toggle-text {
+    position: relative;
+    margin-left: 36px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Dark Mode Styles */
+body.dark-mode .dark-mode-toggle {
+    background-color: #4B0082; /* Dark mode background */
+    color: #ffffff; /* White text */
+    border-color: #FFD700; /* Gold border */
+}
+
+body.dark-mode .dark-mode-toggle .toggle-circle {
+    left: 90px; /* Move the circle to the right */
+    background-color: #FFD700; /* Gold circle */
+}
+
+body.dark-mode .dark-mode-toggle .toggle-text {
+    color: #ffffff; /* White text */
+}
+
+/* Hover Effect */
+.dark-mode-toggle:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    transition: box-shadow 0.3s;
+}

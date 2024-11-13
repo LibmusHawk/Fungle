@@ -1,0 +1,78 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f6f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login Container */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Form Header */
+.login-form h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #6a1b9a;
+}
+
+/* Input Fields */
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Submit Button */
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #8e24aa;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+    background-color: #ab47bc;
+}
+
+/* Register Link */
+.register-link {
+    margin-top: 15px;
+}
+
+.register-link a {
+    color: #6a1b9a;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Error Message */
+.error {
+    color: red;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
